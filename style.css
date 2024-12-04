@@ -1,0 +1,18 @@
+.slide {
+    display: none;
+}
+
+#sliderPrewButton {
+    display: none;
+}
+
+.active {
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+#slider {
+    display: flex;
+    align-items: center;
+}
