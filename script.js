@@ -1,6 +1,7 @@
 const slide = document.querySelectorAll('div.slide')
 const sliderPrewButton = document.getElementById('sliderPrewButton')
 const sliderNextButton = document.getElementById('sliderNextButton')
+let sliderNavigation = document.getElementById('sliderNavigation')
 
 let currentSlideIndex = 0
 
@@ -44,4 +45,16 @@ function slidePrew() {
     } else {
         sliderNextButton.style.display = 'block'
     }
+}
+
+for (let i = 1; i <= slide.length; i++) {
+    let a = document.createElement('button')
+    let nav = document.createTextNode(`${i}`)
+    a.appendChild(nav)
+    sliderNavigation.appendChild(a)
+
+    a.addEventListener('click', () => {
+        slide.forEach(slide => slide.classList.remove('active'));
+        slide[i - 1].classList.add('active');
+    })
 }
